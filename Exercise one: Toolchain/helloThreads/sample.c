@@ -1,3 +1,6 @@
+/*! 
+	Izabela Zelek 02/02/2023
+*/
 #include <stdio.h>
 
 main()
