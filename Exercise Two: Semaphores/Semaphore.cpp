@@ -33,3 +33,8 @@ void Semaphore::Signal()
       ++m_uiCount;
       m_condition.notify_one();
 }
+/*! 
+	Izabela Zelek 02/02/2023
+	GNU GENERAL PUBLIC LICENSE
+		Version 3, 29 June 2007
+*/
