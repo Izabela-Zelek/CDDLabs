@@ -11,8 +11,8 @@
    Uses C++11 features such as mutex and condition variables to implement Semaphores in thread functions 
 
 */
-/*! displays a message first
-	signals taskTwo to be called when finished*/
+/// displays a message first
+/// signals taskTwo to be called when finished*/
 void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay){
   sleep(delay);
   std::cout <<"I ";
@@ -21,8 +21,8 @@ void taskOne(std::shared_ptr<Semaphore> theSemaphore, int delay){
   std::cout << "first"<<std::endl;
   theSemaphore->Signal();
 }
-/*! displays a message second
-	waits for taskOne to be finished*/
+/// displays a message second
+/// waits for taskOne to be finished*/
 void taskTwo(std::shared_ptr<Semaphore> theSemaphore){
   theSemaphore->Wait();
   std::cout <<"This ";
