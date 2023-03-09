@@ -1,1 +1,0 @@
-izabelazelek@pop-os.5283:1678367947
