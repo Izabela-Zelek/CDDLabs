@@ -13,7 +13,7 @@ CFLAGS= -std=c++11 -pthread -Wall
 	$(CC) -c -o $@ $< $(CFLAGS) $(DEBUGFLAGS)
 
 ALL: main.o Semaphore.o Barrier.o
-	$(CC) -o barrier Barrier.o main.o Semaphore.o $(CFLAGS) $(DEBUGFLAGS)
+	$(CC) -o signal Barrier.o main.o Semaphore.o $(CFLAGS) $(DEBUGFLAGS)
 
 DEBUG: DEBUGFLAGS -O0
 DEBUG: ALL

@@ -26,7 +26,7 @@ void barrierTask(std::shared_ptr<Barrier> theBarrier, int numLoops){
     theBarrier->wait();
     //Do second half of task
     std::cout<< "B" << i;
-    theB
+    theBarrier->wait();
   }
 
 
