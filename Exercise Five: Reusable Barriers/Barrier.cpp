@@ -33,7 +33,7 @@ Barrier::Barrier(int numThreads)
     this->numThreads = numThreads;
     count = 0;
 }
-
+// Stops all semaphores once the first task is finished, it then resumes once all semaphores have reached the same point
 void Barrier::wait()
 {
     mutex->Wait();
