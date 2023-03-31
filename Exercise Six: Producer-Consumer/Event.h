@@ -37,8 +37,8 @@ class Event
 {
     int number;
  public:
-    void createEvent(int t_number){thi->.number = t_number;std::cout<<"Created " << number << std::endl;};
-    void consumeEvent(){std::cout << "Consumed " << number << stD::endl;};
+    void createEvent(int t_number){this->number = t_number;std::cout<<"Created " << number << std::endl;};
+    void consumeEvent(){std::cout << "Consumed " << number << std::endl;};
 };
 
 

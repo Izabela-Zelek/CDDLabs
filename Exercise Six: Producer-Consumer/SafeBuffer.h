@@ -45,13 +45,13 @@
 /* Code: */
 #pragma once
 #include "Semaphore.h"
-
+#include "Event.h"
 class SafeBuffer
 {
-    Semaphore *mutex =  new Semaphore(1);
+    std::mutex mutex;
     Semaphore *items = new Semaphore(0);
-    Semaphore *spaces = new Semaphore();
-    Event localEvent;
+    Semaphore *spaces = new Semaphore(10);
+    Event localEvent[];
 public:
     void consume();
     void put(Event e);

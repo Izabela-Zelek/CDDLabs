@@ -2,15 +2,18 @@
 
 void SafeBuffer::consume()
 {
-    mutex->Wait();
-    localEvent.consumeEvent();
-    items->Signal();
-    mutex->Wait();
+    items->Wait();
+    std::unique_lock<std::mutex> lock(m_mutex);
+    localEvent.Remove(e.consumeEvent());
+    spaces->Signal();
+    std::unique_lock<std:::mutex> unlock(m_mutex);
 }
 
 void SafeBuffer::put(Event e)
 {
-    items->Wait();
-    localEvent = e;
-    mutex->Signal();
+    spaces->Wait();
+    std::unique_lock<std::mutex> lock(m_mutex);
+    localEvent.Add(e);
+    items->Signal();
+    std::unique_lock<std::mutex> unlock(m_mutex);
 }
